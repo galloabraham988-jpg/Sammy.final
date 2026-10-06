@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SAMMY RR - Portal RRHH</title>
+    <style>
+        body { font-family: sans-serif; background-color: #0f1015; color: #fff; margin: 0; padding: 20px; }
+        .container { max-width: 600px; margin: 0 auto; background: #181a20; padding: 20px; border-radius: 12px; }
+        h1, h2 { color: #ff3366; text-align: center; }
+        .form-group { margin-bottom: 15px; }
+        label { display: block; margin-bottom: 5px; color: #aaa; }
+        input, select { width: 100%; padding: 10px; border-radius: 6px; border: 1px solid #333; background: #222; color: #fff; box-sizing: border-box; }
+        button { width: 100%; padding: 12px; background: #ff3366; color: white; border: none; border-radius: 6px; font-weight: bold; cursor: pointer; margin-top: 10px; }
+        button:hover { background: #e02e5b; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>SAMMY RR</h1>
+        <h2>Alta de Nuevos Administradores y Encargados</h2>
+        
+        <div class="form-group">
+            <label>Nombre y Apellido</label>
+            <input type="text" id="nombreUsuario" placeholder="Ej: Luciano Gallo">
+        </div>
+        
+        <div class="form-group">
+            <label>Rol en el Sistema</label>
+            <select id="rolUsuario">
+                <option value="capacitacion">Capacitación</option>
+                <option value="rrhh">Recursos Humanos</option>
+                <option value="encargado">Encargado</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label>Sucursal / Sede</label>
+            <input type="text" id="sucursalUsuario" placeholder="Ej: Caballito">
+        </div>
+
+        <button id="btnCrearUsuario">Crear Usuario en el Sistema</button>
+    </div>
+
+    <script>
+        document.getElementById('btnCrearUsuario').addEventListener('click', () => {
+            const nombre = document.getElementById('nombreUsuario').value;
+            if(!nombre) {
+                alert('Por favor completa el nombre');
+                return;
+            }
+            alert('Procesando alta para: ' + nombre);
+        });
+    </script>
+</body>
+</html>
